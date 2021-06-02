@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<context:component-scan
+		base-package="com.freehoon.web.board.dao" />
+
+	<!--dataSource 객체 설정 -->
+
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="dataSource">
+		<!-- 아래의 기존 내용은 주석 처리 하거나 삭제 합니다. -->
+
+		<!-- <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" 
+			/> <property name="url" value="jdbc:mysql://127.0.0.1:3306/mess?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" 
+			/> -->
+
+		<property name="driverClassName"
+			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="url"
+			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/mess?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
+		<property value="root" name="username" />
+		<property value="khs_139850" name="password" />
+
+	</bean>
+
+	<!-- SqlSessionFactory 객체 설정 -->
+
+
+
+
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
+		id="SqlSessionFactory">
+
+		<property name="dataSource" ref="dataSource" />
+
+		<property value="classpath:/mappers/**/*Mapper.xml"
+			name="mapperLocations" />
+
+	</bean>
+
+	<!-- SqlSession Template 설정 -->
+
+
+
+
+	<bean class="org.mybatis.spring.SqlSessionTemplate"
+		id="sqlSession" destroy-method="clearCache">
+
+		<constructor-arg name="sqlSessionFactory"
+			ref="SqlSessionFactory" />
+
+	</bean>
+
+</beans>
