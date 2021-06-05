@@ -33,17 +33,16 @@
 <link rel="stylesheet"
 	href="<c:url value='/resources/common/css/common.css'/>">
 
-<!-- <script>
-	function enterkey() {
+<script>
+ 	function enterkey() {
 		if (window.event.keyCode == 13) {
 			var input = document.getElementById("text").value;
 			temp = input;
-			alert(input);
 			
-			location.href = "/getBoardContent?bid=" + 21;
+			location.href = "/board/getBoardList?searchType=title&keyword=" + input;
 		}
 	}
-</script> -->
+</script>
 
 <!--메뉴바 추가 부분-->
 
@@ -73,7 +72,7 @@
 				href="/board/SpecialThanks">Special Thanks</a></li>
 		</ul>
 	</div>
-<!-- 	<input class="form-control" id = "text" type="text" placeholder="Search" onkeyup="enterkey()"
-		style="width: 300px;"> -->
+	<input class="form-control" id = "text" type="text" placeholder="Search" onkeyup="enterkey()"
+		style="width: 300px;">
 
 </nav>

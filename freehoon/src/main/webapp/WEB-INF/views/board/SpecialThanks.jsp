@@ -39,7 +39,6 @@
 		<ul>
 			<li>선대팟 모두</li>
 			<li>아싸팟 모두</li>
-			<li>https://freehoon.tistory.com</li>
 			<li>https://www.a-mean-blog.com</li>
 			<li>https://m.blog.naver.com/sejun3278</li>
 			<li>https://tychejin.tistory.com</li>

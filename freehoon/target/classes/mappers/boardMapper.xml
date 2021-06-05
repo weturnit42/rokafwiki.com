@@ -26,7 +26,7 @@
 
 		<if
 			test="searchType=='title' and keyword != null and keyword != '' and keyword.length &gt; 3">
-			order by levenshtein(title, #{keyword})
+			order by LEVENSHTEIN(title, #{keyword})
 		</if>
 
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
@@ -106,7 +106,7 @@
 
 		FROM
 
-		TBL_BOARD
+		tbl_board
 
 		WHERE
 
@@ -119,7 +119,7 @@
 	<insert id="insertBoard"
 		parameterType="com.freehoon.web.board.model.BoardVO">
 
-		INSERT INTO TBL_BOARD (CATE_CD, TITLE, CONTENT, TAG,
+		INSERT INTO tbl_board (CATE_CD, TITLE, CONTENT, TAG,
 		VIEW_CNT, REG_ID, REG_DT, EDIT_DT)
 
 		VALUES (
@@ -149,7 +149,7 @@
 	<update id="updateBoard"
 		parameterType="com.freehoon.web.board.model.BoardVO">
 
-		UPDATE TBL_BOARD SET
+		UPDATE tbl_board SET
 
 		CATE_CD = "IMSI"
 
@@ -172,7 +172,7 @@
 
 	<delete id="deleteBoard" parameterType="int">
 
-		DELETE FROM TBL_BOARD
+		DELETE FROM tbl_board
 
 		WHERE BID = #{bid}
 
@@ -183,7 +183,7 @@
 	<update id="updateViewCnt"
 		parameterType="com.freehoon.web.board.model.BoardVO">
 
-		UPDATE TBL_BOARD SET
+		UPDATE tbl_board SET
 
 		VIEW_CNT = VIEW_CNT + 1
 
