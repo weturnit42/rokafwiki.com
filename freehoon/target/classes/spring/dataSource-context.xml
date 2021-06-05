@@ -25,9 +25,11 @@
 		<property name="driverClassName"
 			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url"
-			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/mess?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
-		<property value="root" name="username" />
-		<property value="khs_139850" name="password" />
+			value="jdbc:log4jdbc:mysql://weturnit43.cafe24.com/weturnit43?useSSL=false&amp;serverTimezone=UTC" />
+		<!-- <property value="root" name="username" />
+		<property value="" name="password" /> -->
+		<property value="weturnit43" name="username" />
+		<property value="" name="password" />
 
 	</bean>
 

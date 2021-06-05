@@ -30,19 +30,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>ROKAF WIKI</title>
 </head>
 <body>
 <br>
-	<h2>&nbsp;Special Thanks</h2>
-	<h3>&nbsp;&nbsp;&nbsp;Technical Help</h3>
-		<ul>
-			<li>선대팟 모두</li>
-			<li>아싸팟 모두</li>
-			<li>https://freehoon.tistory.com</li>
-			<li>https://www.a-mean-blog.com</li>
-			<li>https://m.blog.naver.com/sejun3278</li>
-			<li>https://tychejin.tistory.com</li>
-		</ul>
+<h1>&nbsp;Front Page </h1>
+&nbsp;&nbsp;&nbsp;공군의, 공군에 의한, 공군을 위한
 </body>
 </html>

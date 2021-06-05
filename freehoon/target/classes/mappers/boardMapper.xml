@@ -22,15 +22,19 @@
 
 		FROM
 
-		TBL_BOARD
+		tbl_board
 
 		<if
 			test="searchType=='title' and keyword != null and keyword != '' and keyword.length &gt; 3">
-			order by mess.levenshtein(title, #{keyword})
+			order by levenshtein(title, #{keyword})
 		</if>
 
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
-
+		
+			<if
+				test="searchType=='title' and keyword != null and keyword != '' and keyword.length == 3">
+				AND TITLE like CONCAT('%', #{keyword}, '%')
+			</if>
 			<if
 				test="searchType=='title' and keyword != null and keyword != '' and keyword.length &lt; 3">
 				AND TITLE like CONCAT('%', #{keyword}, '%')
@@ -59,13 +63,18 @@
 
 		FROM
 
-		TBL_BOARD
+			tbl_board
 		<if
 			test="searchType=='title' and keyword != null and keyword != '' and keyword.length &gt; 3">
 		</if>
 
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 
+
+			<if
+				test="searchType=='title' and keyword != null and keyword != '' and keyword.length == 3">
+				AND TITLE like CONCAT('%', #{keyword}, '%')
+			</if>
 			<if
 				test="searchType=='title' and keyword != null and keyword != '' and keyword.length &lt; 3">
 				AND TITLE like CONCAT('%', #{keyword}, '%')
