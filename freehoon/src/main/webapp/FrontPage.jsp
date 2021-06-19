@@ -35,7 +35,11 @@
 </head>
 <body>
 <br>
-<h1>&nbsp;Front Page </h1>
+<h1>&nbsp;FrontPage </h1>
 &nbsp;&nbsp;&nbsp;공군의, 공군에 의한, 공군을 위한
+<br>
+<p>&nbsp;&nbsp;&nbsp;문서 편집 시 주의사항</p>
+&nbsp;&nbsp;&nbsp;ROKAF WIKI는 대한민국에 서버를 두고 있는 위키입니다. 모든 문서의 생성과 편집은 대한민국의 법률에 위배되지 않게 작성되어야 합니다.<br>
+&nbsp;&nbsp;&nbsp;군사특기와 학과 관련 문서 모두 군 내부에서 알게 된 기밀사항을 누설하지 않아야합니다.
 </body>
 </html>

@@ -68,6 +68,9 @@
 			<li class="nav-item"><a class="nav-link"
 				href="/board/getBoardList">WIKI</a></li>
 
+ 			<li class="nav-item"><a class="nav-link"
+				href="/board/Survey">Survey</a></li>
+
 			<li class="nav-item"><a class="nav-link"
 				href="/board/SpecialThanks">Special Thanks</a></li>
 		</ul>

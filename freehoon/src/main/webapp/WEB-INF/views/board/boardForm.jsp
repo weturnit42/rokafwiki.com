@@ -13,11 +13,14 @@
 	src='https://cdn.tiny.cloud/1/gwke15lb3bzv3u8kq274dimwbpbjrlzqfz3jcoiyz3uldulr/tinymce/5/tinymce.min.js'
 	referrerpolicy="origin"></script>
 <script>
-  tinymce.init({
-    selector: '#mytextarea'
-    
-  });
-  </script>
+	tinymce.init({
+		selector : '#mytextarea',
+		forced_root_block : false,
+		force_br_newlines : true,
+		force_p_newlines : false,
+
+	});
+</script>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -34,39 +37,52 @@
 
 
 <script>
-	$(document).on('click', '#btnSave', function(e) {
-		var myContent = tinymce.get("mytextarea").getContent();
-		e.preventDefault();
-        
-		   $("<input />").attr("type", "hidden")
-	          .attr("name", "content")
-	          .attr("value", myContent)
-	          .appendTo("#form");
-		
-		//alert(editor.getData());
-		//$('#content').text(editor.getData());
-		console.log('test')		
-		$("#form").submit();
-	});
+	$(document).on(
+			'click',
+			'#btnSave',
+			function(e) {
+				var myContent = tinymce.get("mytextarea").getContent();
+				e.preventDefault();
 
-	$(document).on('click', '#btnList', function(e) {
-		e.preventDefault();
-		location.href = "${pageContext.request.contextPath}/board/getBoardList";
-	});
-	
-	$(document).ready(function(){
-		var mode = '<c:out value="${mode}"/>';
-		if ( mode == 'edit'){
-			//입력 폼 셋팅
-			$("#reg_id").prop('readonly', true);
-			$("input:hidden[name='bid']").val(<c:out value="${boardContent.bid}"/>);
-			$("input:hidden[name='mode']").val('<c:out value="${mode}"/>');
-			$("#reg_id").val('<c:out value="${boardContent.reg_id}"/>');
-			$("#title").val('<c:out value="${boardContent.title}"/>');
-			$("#content").val('<c:out value="${boardContent.content}"/>');
-			$("#tag").val('<c:out value="${boardContent.tag}"/>');
-		}
-	});
+				$("<input />").attr("type", "hidden").attr("name", "content")
+						.attr("value", myContent).appendTo("#form");
+
+				//alert(editor.getData());
+				//$('#content').text(editor.getData());
+				console.log('test')
+				$("#form").submit();
+			});
+
+	$(document)
+			.on(
+					'click',
+					'#btnList',
+					function(e) {
+						e.preventDefault();
+						location.href = "${pageContext.request.contextPath}/board/getBoardList";
+					});
+
+	$(document)
+			.ready(
+					function() {
+						var mode = '<c:out value="${mode}"/>';
+						if (mode == 'edit') {
+							//입력 폼 셋팅
+							$("#reg_id").prop('readonly', true);
+							$("input:hidden[name='bid']").val(
+									<c:out value="${boardContent.bid}"/>);
+							$("input:hidden[name='mode']").val(
+									'<c:out value="${mode}"/>');
+							$("#reg_id").val(
+									'<c:out value="${boardContent.reg_id}"/>');
+							$("#title").val(
+									'<c:out value="${boardContent.title}"/>');
+							$("#content").val(
+									'<c:out value="${boardContent.content}"/>');
+							$("#tag").val(
+									'<c:out value="${boardContent.tag}"/>');
+						}
+					});
 </script>
 
 </head>
@@ -107,11 +123,11 @@
 
 				</div>
 
-				<div class="mb-3">
+				<%-- 				<div class="mb-3">
 					<label for="tag">TAG</label>
 					<form:input path="tag" id="tag" class="form-control"
 						placeholder="태그를 입력해 주세요" />
-				</div>
+				</div> --%>
 
 			</form:form>
 
