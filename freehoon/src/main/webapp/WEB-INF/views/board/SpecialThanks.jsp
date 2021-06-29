@@ -4,6 +4,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/WEB-INF/views/layout/header.jsp"%>
 
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
 <meta charset="UTF-8">
 
 <!-- jQuery -->
@@ -19,12 +25,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
-<!DOCTYPE html>
 
-<html>
-
-<head>
-<head>
 <meta charset="UTF-8">
 <title>ROKAF WIKI</title>
 </head>
@@ -37,22 +38,21 @@
 		<li>아싸팟 모두</li>
 		<li>https://www.a-mean-blog.com</li>
 		<li>https://m.blog.naver.com/sejun3278</li>
-		<li>https://freehoon.tistory.com</li>
 		<li>https://tychejin.tistory.com</li>
 	</ul>
+
 	<h3>&nbsp;&nbsp;&nbsp;Design</h3>
 	<ul>
-		<li>익명의 공군 디자이너</li>
+		<li>익명의 공군 정훈병</li>
 		<li>선대팟 모두</li>
 		<li>아싸팟 모두</li>
 		<li>익명의 공군 총무</li>
 		<li>익명의 카투사 헬빨러</li>
 	</ul>
+	
 	<h3>&nbsp;&nbsp;&nbsp;Survey</h3>
 	<ul>
-		<li>익명의 공군 운항관제</li>
-		<li>익명의 공군 총무</li>
-		<li>익명의 공군 정보체계관리</li>
+		<li>약 200여명의 공군 병사</li>
 	</ul>
 </body>
 </html>

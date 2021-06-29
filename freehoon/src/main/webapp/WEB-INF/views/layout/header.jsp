@@ -34,12 +34,13 @@
 	href="<c:url value='/resources/common/css/common.css'/>">
 
 <script>
- 	function enterkey() {
+	function enterkey() {
 		if (window.event.keyCode == 13) {
 			var input = document.getElementById("text").value;
 			temp = input;
-			
-			location.href = "/board/getBoardList?searchType=title&keyword=" + input;
+
+			location.href = "/board/getBoardList?searchType=title&keyword="
+					+ input;
 		}
 	}
 </script>
@@ -68,14 +69,14 @@
 			<li class="nav-item"><a class="nav-link"
 				href="/board/getBoardList">WIKI</a></li>
 
- 			<li class="nav-item"><a class="nav-link"
-				href="/board/Survey">Survey</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="/board/ROKAF_MBTI/Q1">ROKAF MBTI</a></li>
 
 			<li class="nav-item"><a class="nav-link"
 				href="/board/SpecialThanks">Special Thanks</a></li>
 		</ul>
 	</div>
-	<input class="form-control" id = "text" type="text" placeholder="Search" onkeyup="enterkey()"
-		style="width: 300px;">
+	<input class="form-control" id="text" type="text" placeholder="Search"
+		onkeyup="enterkey()" style="width: 300px;">
 
 </nav>

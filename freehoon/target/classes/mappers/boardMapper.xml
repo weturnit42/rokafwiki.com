@@ -24,24 +24,11 @@
 
 		tbl_board
 
-		<if
-			test="searchType=='title' and keyword != null and keyword != '' and keyword.length &gt; 3">
-			order by LEVENSHTEIN(title, #{keyword})
-		</if>
-
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 		
-			<if
-				test="searchType=='title' and keyword != null and keyword != '' and keyword.length == 3">
-				AND TITLE like CONCAT('%', #{keyword}, '%')
-			</if>
-			<if
-				test="searchType=='title' and keyword != null and keyword != '' and keyword.length &lt; 3">
-				AND TITLE like CONCAT('%', #{keyword}, '%')
-			</if>
 
-			<!-- <if test="searchType=='title' and keyword != null and keyword != 
-				''"> AND TITLE like CONCAT('%', #{keyword}, '%') </if> -->
+			<if test="searchType=='title' and keyword != null and keyword != 
+				''"> AND TITLE like CONCAT('%', #{keyword}, '%') </if>
 			<if
 				test="searchType=='Content' and keyword != null and keyword != '' ">
 				AND CONTENT like CONCAT('%', #{keyword}, '%')
@@ -52,6 +39,8 @@
 				AND reg_id like CONCAT('%', #{keyword}, '%')
 			</if>
 		</trim>
+		ORDER BY BID
+		
 		LIMIT #{startList}, #{listSize}
 	</select>
 
@@ -64,24 +53,11 @@
 		FROM
 
 			tbl_board
-		<if
-			test="searchType=='title' and keyword != null and keyword != '' and keyword.length &gt; 3">
-		</if>
 
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 
-
-			<if
-				test="searchType=='title' and keyword != null and keyword != '' and keyword.length == 3">
-				AND TITLE like CONCAT('%', #{keyword}, '%')
-			</if>
-			<if
-				test="searchType=='title' and keyword != null and keyword != '' and keyword.length &lt; 3">
-				AND TITLE like CONCAT('%', #{keyword}, '%')
-			</if>
-
-			<!-- <if test="searchType=='title' and keyword != null and keyword != 
-				''"> AND TITLE like CONCAT('%', #{keyword}, '%') </if> -->
+			<if test="searchType=='title' and keyword != null and keyword != 
+				''"> AND TITLE like CONCAT('%', #{keyword}, '%') </if>
 			<if
 				test="searchType=='Content' and keyword != null and keyword != '' ">
 				AND CONTENT like CONCAT('%', #{keyword}, '%')

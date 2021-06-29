@@ -77,7 +77,7 @@ body {
 
 				<div class="board_content">${boardContent.content}</div>
 
-<%-- 				<div class="board_tag">TAG : <c:out value="${boardContent.tag}"/></div> --%>
+				<div class="board_tag">TAG : <c:out value="${boardContent.tag}"/></div>
 
 			</div>
 

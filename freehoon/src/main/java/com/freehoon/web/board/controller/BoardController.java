@@ -1,6 +1,8 @@
 package com.freehoon.web.board.controller;
 
 import javax.inject.Inject;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 
@@ -63,6 +65,82 @@ public class BoardController {
 	@RequestMapping("/SpecialThanks")
 	public String SpecialThanks() {
 		return "board/SpecialThanks";
+	}
+	
+	@RequestMapping("/ROKAF_MBTI/Q1")
+	public String Q1(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q1";
+	}
+	
+	@RequestMapping("/ROKAF_MBTI/Q2_1")
+	public String Q2_1(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q2_1";
+	}
+	@RequestMapping("/ROKAF_MBTI/Q2_2")
+	public String Q2_2(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q2_2";
+	}	
+	@RequestMapping("/ROKAF_MBTI/Q2_3")
+	public String Q2_3(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q2_3";
+	}	
+	@RequestMapping("/ROKAF_MBTI/Q2_4")
+	public String Q2_4(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q2_4";
+	}
+	@RequestMapping("/ROKAF_MBTI/Q2_5")
+	public String Q2_5(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q2_5";
+	}
+	
+	@RequestMapping("/ROKAF_MBTI/Q3_1")
+	public String Q3_1(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q3_1";
+	}
+	@RequestMapping("/ROKAF_MBTI/Q3_2")
+	public String Q3_2(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q3_2";
+	}	
+	@RequestMapping("/ROKAF_MBTI/Q3_3")
+	public String Q3_3(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q3_3";
+	}	
+	@RequestMapping("/ROKAF_MBTI/Q3_4")
+	public String Q3_4(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q3_4";
+	}
+	@RequestMapping("/ROKAF_MBTI/Q3_5")
+	public String Q3_5(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q3_5";
+	}
+
+	@RequestMapping("/ROKAF_MBTI/Q4")
+	public String Q4(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q4";
+	}
+	
+	@RequestMapping("/ROKAF_MBTI/Q5")
+	public String Q5(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q5";
+	}
+
+	@RequestMapping("/ROKAF_MBTI/Q6")
+	public String Q6(final HttpServletResponse response) {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		return "board/ROKAF_MBTI/Q6";
 	}
 
 	@RequestMapping(value = "/saveBoard", method = RequestMethod.POST)
