@@ -116,8 +116,32 @@
 
 		, now()
 
-		)
+		);
+		
+		INSERT INTO backup (BID, CATE_CD, TITLE, CONTENT, TAG,
+		VIEW_CNT, REG_ID, REG_DT, EDIT_DT)
 
+		VALUES (
+
+		#{bid}
+
+		,"IMSI"
+
+		, #{title}
+
+		, #{content}
+
+		, #{tag}
+
+		, 0
+
+		, #{reg_id}
+
+		, now()
+
+		, now()
+
+		);
 	</insert>
 
 
@@ -140,7 +164,32 @@
 
 		WHERE
 
-		BID = ${bid}
+		BID = ${bid};
+		
+		INSERT INTO backup (BID, CATE_CD, TITLE, CONTENT, TAG,
+		VIEW_CNT, REG_ID, REG_DT, EDIT_DT)
+
+		VALUES (
+
+		#{bid}
+
+		,"IMSI"
+
+		, #{title}
+
+		, #{content}
+
+		, #{tag}
+
+		, 0
+
+		, #{reg_id}
+
+		, now()
+
+		, now()
+
+		);
 
 	</update>
 

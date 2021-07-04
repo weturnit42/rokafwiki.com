@@ -104,7 +104,7 @@
 			});
 			
 			
-			alert(score1 + " " + score2 + " " + score3 + " " + score4);
+			//alert(score1 + " " + score2 + " " + score3 + " " + score4);
 			localStorage.setItem("지상레이더체계정비", score1);
 			localStorage.setItem("무선통신체계정비", score2);
 			localStorage.setItem("항공전자장비정비", score3);

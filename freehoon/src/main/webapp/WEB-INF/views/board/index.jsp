@@ -142,7 +142,7 @@ body {
 
 									<th>조회수</th>
 
-									<th>작성일</th>
+									<th>수정일</th>
 
 								</tr>
 
@@ -175,7 +175,7 @@ body {
 
 												<td><c:out value="${list.view_cnt}" /></td>
 
-												<td><c:out value="${list.reg_dt}" /></td>
+												<td><c:out value="${list.edit_dt}" /></td>
 
 											</tr>
 

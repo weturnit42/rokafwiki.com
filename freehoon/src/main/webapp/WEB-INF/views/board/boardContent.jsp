@@ -21,6 +21,7 @@
 <title>ROKAF WIKI</title>
 
 <script>
+	//목록 버튼 클릭 이벤트
 	$(document).on('click', '#btnList', function(){
 		location.href = "${pageContext.request.contextPath}/board/getBoardList";
 	});
@@ -35,16 +36,18 @@
 	});
 	
 	//삭제 버튼 클릭 이벤트
-
 	$(document).on('click', '#btnDelete', function(){
     var url = "${pageContext.request.contextPath}/board/deleteBoard";
     url = url + "?bid=" + ${boardContent.bid};
 
 		location.href = url;
 	});
+
+	//목록 버튼 클릭 이벤트
+	$(document).on('click', '#btnLog', function(){
+		location.href = "${pageContext.request.contextPath}/board/getBoardLog";
+	});
 </script>
-
-
 
 </head>
 
@@ -77,7 +80,7 @@ body {
 
 				<div class="board_content">${boardContent.content}</div>
 
-				<div class="board_tag">TAG : <c:out value="${boardContent.tag}"/></div>
+				<%-- <div class="board_tag">TAG : <c:out value="${boardContent.tag}"/></div> --%>
 
 			</div>
 
@@ -87,10 +90,11 @@ body {
 
 				<button type="button" class="btn btn-sm btn-primary" id="btnUpdate">수정</button>
 
-				<button type="button" class="btn btn-sm btn-primary" id="btnDelete">삭제</button>
+				<!-- <button type="button" class="btn btn-sm btn-primary" id="btnDelete">삭제</button> -->
 
 				<button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
 
+				<button type="button" class="btn btn-sm btn-primary" id="btnLog">로그</button>
 			</div>
 
 		</div>

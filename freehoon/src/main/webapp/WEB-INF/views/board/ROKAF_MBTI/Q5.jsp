@@ -53,60 +53,60 @@
 		function scoreExtra() {
 			if($("input[name='class1']:checked").val() == '일과제') {
 				if(localStorage.getItem("class") == "기계") {
-					var val = Number(localStorage.getItem("항공기제작정비"))+1;
+					var val = Number(localStorage.getItem("항공기제작정비"))+0.01;
 					localStorage.setItem("항공기제작정비", val);
-					var val = Number(localStorage.getItem("비파괴검사"))+1;
+					var val = Number(localStorage.getItem("비파괴검사"))+0.01;
 					localStorage.setItem("비파괴검사", val);
 				}
 				if(localStorage.getItem("class") == "일반") {
-					var val = Number(localStorage.getItem("항공의무"))+1;
+					var val = Number(localStorage.getItem("항공의무"))+0.01;
 					localStorage.setItem("항공의무", val);
-					var val = Number(localStorage.getItem("장비물자보급"))+1;
+					var val = Number(localStorage.getItem("장비물자보급"))+0.01;
 					localStorage.setItem("장비물자보급", val);
-					var val = Number(localStorage.getItem("인사교육"))+1;
+					var val = Number(localStorage.getItem("인사교육"))+0.01;
 					localStorage.setItem("인사교육", val);
 				}
 				if(localStorage.getItem("class") == "차량운전") {
-					var val = Number(localStorage.getItem("일반차량운전"))+1;
+					var val = Number(localStorage.getItem("일반차량운전"))+0.01;
 					localStorage.setItem("일반차량운전", val);
 				}
 				if(localStorage.getItem("class") == "통신전자전기") {
-					var val = Number(localStorage.getItem("방공유도무기정비"))+1;
+					var val = Number(localStorage.getItem("방공유도무기정비"))+0.01;
 					localStorage.setItem("방공유도무기정비", val);
-					var val = Number(localStorage.getItem("항공전자장비정비"))+1;
+					var val = Number(localStorage.getItem("항공전자장비정비"))+0.01;
 					localStorage.setItem("항공전자장비정비", val);
 				}
 			}
 			if($("input[name='class1']:checked").val() == '크루제') {
 				if(localStorage.getItem("class") == "일반") {
-					var val = Number(localStorage.getItem("기상관측"))+1;
+					var val = Number(localStorage.getItem("기상관측"))+0.01;
 					localStorage.setItem("기상관측", val);
-					var val = Number(localStorage.getItem("운항관제"))+1;
+					var val = Number(localStorage.getItem("운항관제"))+0.01;
 					localStorage.setItem("운항관제", val);
-					var val = Number(localStorage.getItem("항공통제"))+1;
+					var val = Number(localStorage.getItem("항공통제"))+0.01;
 					localStorage.setItem("항공통제", val);
 				}
 				if(localStorage.getItem("class") == "통신전자전기") {
-					var val = Number(localStorage.getItem("지상레이더체계정비"))+1;
+					var val = Number(localStorage.getItem("지상레이더체계정비"))+0.01;
 					localStorage.setItem("지상레이더체계정비", val);                       //굳이 특기별로 나눠야 되나?
 				}
 			}
 			if($("input[name='class2']:checked").val() == '가점') {
-				var val = Number(localStorage.getItem("항공기초과저지"))+1;
+				var val = Number(localStorage.getItem("항공기초과저지"))+0.01;
 				localStorage.setItem("항공기초과저지", val);
-				var val = Number(localStorage.getItem("운항관제"))+1;
+				var val = Number(localStorage.getItem("운항관제"))+0.01;
 				localStorage.setItem("운항관제", val);
 			}
 			
 			if($("input[name='class2']:checked").val() == '가점') {
-				var val = Number(localStorage.getItem("항공기초과저지"))+1;
+				var val = Number(localStorage.getItem("항공기초과저지"))+0.01;
 				localStorage.setItem("항공기초과저지", val);
-				var val = Number(localStorage.getItem("운항관제"))+1;
+				var val = Number(localStorage.getItem("운항관제"))+0.01;
 				localStorage.setItem("운항관제", val);
 			}
 			
 			if($("input[name='class2']:checked").val() == '휴식') {
-				var val = Number(localStorage.getItem("인사교육"))+1;
+				var val = Number(localStorage.getItem("인사교육"))+0.01;
 				localStorage.setItem("인사교육", val);
 			}
 		}
@@ -129,9 +129,9 @@
 					$('#Q1').load('Q6 #단거리유도무기운용');
 				else if(localStorage.getItem("장비물자보급") >= 0.1)
 					$('#Q1').load('Q6 #장비물자보급');
-				else if(localStorage.getItem("운항관제") >= 1.1)
+				else if(localStorage.getItem("운항관제") >= 0.1)
 					$('#Q1').load('Q6 #운항관제');
-				else if(localStorage.getItem("인사교육") >= 3.1)
+				else if(localStorage.getItem("인사교육") >= 3)
 					$('#Q1').load('Q6 #인사교육');
 				else if(localStorage.getItem("항공통제") >= 0.1)
 					$('#Q1').load('Q6 #항공통제');
@@ -144,6 +144,13 @@
 					$('#Q1').load('Q6 #단거리유도무기운용');
 				else
 					$('#Q1').load('Q6 #기타헌급방특기');
+			}
+			
+			if(localStorage.getItem("class") == "차량운전") {
+				if(localStorage.getItem("일반차량운전") >= 1)
+					$('#Q1').load('Q6 #일반차량운전');
+				else
+					$('#Q1').load('Q6 #기타차량운전특기');
 			}
 			
 			if(localStorage.getItem("class") == "통신전자전기") {

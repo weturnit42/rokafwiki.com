@@ -52,6 +52,30 @@ public class BoardController {
 		return "board/index";
 	}
 
+	@RequestMapping(value = "/getBoardLog", method = RequestMethod.GET)
+	public String getBoardLog(Model model, @RequestParam(defaultValue = "1") int page,
+			@RequestParam(defaultValue = "1") int range, @RequestParam(value="searchType",defaultValue = "title") String searchType,
+			@RequestParam(required = false) String keyword, @ModelAttribute("search") Search search) throws Exception {
+
+		// 검색
+		model.addAttribute("search", search);
+		search.setSearchType(searchType);
+		search.setKeyword(keyword);
+
+		// 전체 게시글 개수
+		int listCnt = boardService.getBoardListCnt(search);
+
+		// 검색
+		search.pageInfo(page, range, listCnt);
+
+		// 페이징
+		model.addAttribute("pagination", search);
+
+		// 게시글 화면 출력
+		model.addAttribute("boardList", boardService.getBoardList(search));
+		return "board/indexLog";
+	}
+	
 	@RequestMapping("/boardForm")
 	public String boardForm(@ModelAttribute("boardVO") BoardVO vo, Model model) {
 		return "board/boardForm";
@@ -65,6 +89,11 @@ public class BoardController {
 	@RequestMapping("/SpecialThanks")
 	public String SpecialThanks() {
 		return "board/SpecialThanks";
+	}
+	
+	@RequestMapping("/WelcomeClock")
+	public String WelcomeClock() {
+		return "board/WelcomeClock";
 	}
 	
 	@RequestMapping("/ROKAF_MBTI/Q1")

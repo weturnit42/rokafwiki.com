@@ -71,6 +71,9 @@
 
 			<li class="nav-item"><a class="nav-link"
 				href="/board/ROKAF_MBTI/Q1">ROKAF MBTI</a></li>
+				
+			<li class="nav-item"><a class="nav-link"
+				href="/board/WelcomeClock">어서오시계</a></li>
 
 			<li class="nav-item"><a class="nav-link"
 				href="/board/SpecialThanks">Special Thanks</a></li>

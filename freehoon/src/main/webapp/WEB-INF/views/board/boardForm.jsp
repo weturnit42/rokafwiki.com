@@ -12,6 +12,7 @@
 <script
 	src='https://cdn.tiny.cloud/1/gwke15lb3bzv3u8kq274dimwbpbjrlzqfz3jcoiyz3uldulr/tinymce/5/tinymce.min.js'
 	referrerpolicy="origin"></script>
+	
 <script>
   tinymce.init({
     selector: '#mytextarea'
@@ -28,6 +29,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
+	
+
 
 <title>ROKAF WIKI</title>
 
@@ -107,11 +110,11 @@
 
 				</div>
 
-				<div class="mb-3">
+<%-- 				<div class="mb-3">
 					<label for="tag">TAG</label>
 					<form:input path="tag" id="tag" class="form-control"
 						placeholder="태그를 입력해 주세요" />
-				</div>
+				</div> --%>
 
 			</form:form>
 
