@@ -1,6 +1,8 @@
 package com.freehoon.web.board.model;
 
 public class BoardVO {
+	
+	public int bbid;
 
 	public int bid;
 
@@ -15,6 +17,14 @@ public class BoardVO {
 	public int view_cnt;
 
 	public String reg_id;
+	
+	public int getBbid() {
+		return bbid;
+	}
+
+	public void setBbid(int bbid) {
+		this.bbid = bbid;
+	}
 
 	public int getBid() {
 		return bid;

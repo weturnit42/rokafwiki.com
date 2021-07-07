@@ -66,7 +66,6 @@
 			$("input:hidden[name='mode']").val('<c:out value="${mode}"/>');
 			$("#reg_id").val('<c:out value="${boardContent.reg_id}"/>');
 			$("#title").val('<c:out value="${boardContent.title}"/>');
-			$("#content").val('<c:out value="${boardContent.content}"/>');
 			$("#tag").val('<c:out value="${boardContent.tag}"/>');
 		}
 	});

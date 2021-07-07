@@ -24,4 +24,6 @@ public interface BoardService {
 	public void updateBoard(BoardVO boardVO) throws Exception;
 	
 	public void deleteBoard(int bid) throws Exception;
+	
+	public BoardVO getBoardLog(int bbid) throws Exception;
 }

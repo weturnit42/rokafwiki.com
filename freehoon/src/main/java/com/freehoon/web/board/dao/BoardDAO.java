@@ -25,5 +25,7 @@ public interface BoardDAO {
 	public int deleteBoard(int bid) throws Exception;
 
 	public int updateViewCnt(int bid) throws Exception;
+	
+	public BoardVO getBoardLog(int bbid) throws Exception;
 
 }

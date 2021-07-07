@@ -53,28 +53,15 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/getBoardLog", method = RequestMethod.GET)
-	public String getBoardLog(Model model, @RequestParam(defaultValue = "1") int page,
-			@RequestParam(defaultValue = "1") int range, @RequestParam(value="searchType",defaultValue = "title") String searchType,
-			@RequestParam(required = false) String keyword, @ModelAttribute("search") Search search) throws Exception {
-
-		// 검색
-		model.addAttribute("search", search);
-		search.setSearchType(searchType);
-		search.setKeyword(keyword);
-
-		// 전체 게시글 개수
-		int listCnt = boardService.getBoardListCnt(search);
-
-		// 검색
-		search.pageInfo(page, range, listCnt);
-
-		// 페이징
-		model.addAttribute("pagination", search);
-
-		// 게시글 화면 출력
-		model.addAttribute("boardList", boardService.getBoardList(search));
-		return "board/indexLog";
+	public String getBoardLog(Model model, @RequestParam("bbid") int bbid) throws Exception {
+		model.addAttribute("boardLog", boardService.getBoardContent(bbid));
+		return "board/boardLogIndex";
 	}
+//	@RequestMapping(value = "/getBoardContent", method = RequestMethod.GET)
+//	public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
+//		model.addAttribute("boardContent", boardService.getBoardContent(bid));
+//		return "board/boardContent";
+//	}
 	
 	@RequestMapping("/boardForm")
 	public String boardForm(@ModelAttribute("boardVO") BoardVO vo, Model model) {

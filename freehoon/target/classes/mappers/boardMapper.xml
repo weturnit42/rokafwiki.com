@@ -10,7 +10,25 @@
 
 <mapper namespace="com.freehoon.web.board.boardMapper">
 
+	<select id="getBoardLog"
+		resultType="com.freehoon.web.board.model.BoardVO"
+		parameterType="com.freehoon.web.board.model.BoardVO">
 
+		SELECT
+
+		BBID, BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT,
+		REG_ID, REG_DT, EDIT_DT
+
+		FROM
+
+		backup
+ 
+		WHERE
+
+		BBID = #{bbid}
+
+	</select>
+	
 
 	<select id="getBoardList"
 		resultType="com.freehoon.web.board.model.BoardVO">

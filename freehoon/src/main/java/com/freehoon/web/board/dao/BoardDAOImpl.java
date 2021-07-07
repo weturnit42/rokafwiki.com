@@ -53,4 +53,9 @@ public class BoardDAOImpl implements BoardDAO {
 	public int updateViewCnt(int bid) throws Exception {
 		return sqlSession.update("com.freehoon.web.board.boardMapper.updateViewCnt", bid);
 	}
+	
+	@Override
+	public BoardVO getBoardLog(int bbid) throws Exception {
+		return sqlSession.selectOne("com.freehoon.web.board.boardMapper.getBoardLog", bbid);
+	}
 }

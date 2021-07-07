@@ -47,4 +47,9 @@ public class BoardServiceImpl implements BoardService {
 	public void deleteBoard(int bid) throws Exception {
 		 boardDAO.deleteBoard(bid);
 	}
+	
+	@Override
+	public BoardVO getBoardLog(int bbid) throws Exception {
+		return boardDAO.getBoardLog(bbid);
+	}
 }
