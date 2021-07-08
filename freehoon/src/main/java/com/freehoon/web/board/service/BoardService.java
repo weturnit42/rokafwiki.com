@@ -25,5 +25,7 @@ public interface BoardService {
 	
 	public void deleteBoard(int bid) throws Exception;
 	
-	public BoardVO getBoardLog(int bbid) throws Exception;
+	public List<BoardVO> getBoardLogList(int bid) throws Exception;
+	
+	public BoardVO getBoardLogContent(int bbid) throws Exception;
 }

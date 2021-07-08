@@ -25,7 +25,9 @@
  
 		WHERE
 
-		BBID = #{bbid}
+		BID = #{bid}
+		
+		ORDER BY BBID DESC
 
 	</select>
 	
@@ -86,6 +88,25 @@
 				AND reg_id like CONCAT('%', #{keyword}, '%')
 			</if>
 		</trim>
+
+	</select>
+
+	<select id="getBoardLogContent"
+		resultType="com.freehoon.web.board.model.BoardVO"
+		parameterType="com.freehoon.web.board.model.BoardVO">
+
+		SELECT
+
+		BBID, BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT,
+		REG_ID, REG_DT, EDIT_DT
+
+		FROM
+
+		backup
+
+		WHERE
+
+		BBID = #{bbid}
 
 	</select>
 

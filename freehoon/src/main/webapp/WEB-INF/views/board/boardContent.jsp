@@ -43,9 +43,12 @@
 		location.href = url;
 	});
 
-	//목록 버튼 클릭 이벤트
+	//로그 버튼 클릭 이벤트
 	$(document).on('click', '#btnLog', function(){
-		location.href = "${pageContext.request.contextPath}/board/getBoardLog";
+	var url = "${pageContext.request.contextPath}/board/getBoardLog";
+	url = url + "?bid=" + ${boardContent.bid};// ${boardLog.bbid}
+
+		location.href = url;
 	});
 </script>
 

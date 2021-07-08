@@ -55,7 +55,12 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 	
 	@Override
-	public BoardVO getBoardLog(int bbid) throws Exception {
-		return sqlSession.selectOne("com.freehoon.web.board.boardMapper.getBoardLog", bbid);
+	public List<BoardVO> getBoardLogList(int bid) throws Exception {
+		return sqlSession.selectList("com.freehoon.web.board.boardMapper.getBoardLog", bid);
+	}
+	
+	@Override
+	public BoardVO getBoardLogContent(int bbid) throws Exception {
+		return sqlSession.selectOne("com.freehoon.web.board.boardMapper.getBoardLogContent", bbid);
 	}
 }
