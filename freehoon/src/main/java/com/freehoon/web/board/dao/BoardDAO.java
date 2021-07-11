@@ -29,5 +29,7 @@ public interface BoardDAO {
 	public List<BoardVO> getBoardLogList(int bid) throws Exception;
 	
 	public BoardVO getBoardLogContent(int bbid) throws Exception;
+	
+	
 
 }

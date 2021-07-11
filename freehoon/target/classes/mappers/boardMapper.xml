@@ -22,15 +22,15 @@
 		FROM
 
 		backup
- 
+
 		WHERE
 
 		BID = #{bid}
-		
+
 		ORDER BY BBID DESC
 
 	</select>
-	
+
 
 	<select id="getBoardList"
 		resultType="com.freehoon.web.board.model.BoardVO">
@@ -45,9 +45,10 @@
 		tbl_board
 
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
-		
 
-			<if test="searchType=='title' and keyword != null and keyword != 
+
+			<if
+				test="searchType=='title' and keyword != null and keyword != 
 				''"> AND TITLE like CONCAT('%', #{keyword}, '%') </if>
 			<if
 				test="searchType=='Content' and keyword != null and keyword != '' ">
@@ -60,7 +61,7 @@
 			</if>
 		</trim>
 		ORDER BY BID
-		
+
 		LIMIT #{startList}, #{listSize}
 	</select>
 
@@ -72,11 +73,12 @@
 
 		FROM
 
-			tbl_board
+		tbl_board
 
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 
-			<if test="searchType=='title' and keyword != null and keyword != 
+			<if
+				test="searchType=='title' and keyword != null and keyword != 
 				''"> AND TITLE like CONCAT('%', #{keyword}, '%') </if>
 			<if
 				test="searchType=='Content' and keyword != null and keyword != '' ">
@@ -156,9 +158,10 @@
 		, now()
 
 		);
-		
+
 		INSERT INTO backup (BID, CATE_CD, TITLE, CONTENT, TAG,
-		VIEW_CNT, REG_ID, REG_DT, EDIT_DT)
+		VIEW_CNT, REG_ID,
+		REG_DT, EDIT_DT)
 
 		VALUES (
 
@@ -204,9 +207,10 @@
 		WHERE
 
 		BID = ${bid};
-		
+
 		INSERT INTO backup (BID, CATE_CD, TITLE, CONTENT, TAG,
-		VIEW_CNT, REG_ID, REG_DT, EDIT_DT)
+		VIEW_CNT,
+		REG_ID, REG_DT, EDIT_DT)
 
 		VALUES (
 
@@ -218,7 +222,8 @@
 
 		, #{content}
 
-		, #{tag}
+		,
+		#{tag}
 
 		, 0
 
@@ -231,6 +236,18 @@
 		);
 
 	</update>
+
+	<update id="updateLog"
+		parameterType="com.freehoon.web.board.model.BoardVO">
+
+		UPDATE tbl_board
+		SET tbl_board.content = (SELECT backup.content
+								FROM backup
+								WHERE backup.bid = #{bid})
+		WHERE tbl_board.bid = #{bid}
+
+	</update>
+
 
 
 

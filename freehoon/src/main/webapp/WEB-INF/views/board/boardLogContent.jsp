@@ -22,12 +22,11 @@
 <script>
 	//문서 버튼 클릭 이벤트
 	$(document).on('click', '#btnDoc', function() {
-		var url = "${pageContext.request.contextPath}/board/getBoardContent";
+		var url = "${pageContext.request.contextPath}/board/getBoardLog";
 		url = url + "?bid=" + ${boardLogContent.bid};
 
 		location.href = url;
 	});
-
 	
 </script>
 
@@ -61,7 +60,7 @@ body {
 							value="${boardLogContent.reg_dt}" /></span>
 
 				</div>
-
+	
 				<div class="board_content">${boardLogContent.content}</div>
 
 				<%-- <div class="board_tag">TAG : <c:out value="${boardContent.tag}"/></div> --%>
@@ -71,9 +70,7 @@ body {
 			<div style="margin-top: 20px">
 
 				<button type="button" class="btn btn-sm btn-primary" id="btnDoc">돌아가기</button>
-
-				<!-- <button type="button" class="btn btn-sm btn-primary" id="btnSave">이
-					로그로 되돌리기</button> -->
+				
 			</div>
 
 		</div>

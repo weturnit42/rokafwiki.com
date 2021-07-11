@@ -55,18 +55,15 @@ public class BoardController {
 	@RequestMapping(value = "/getBoardLog", method = RequestMethod.GET)
 	public String getBoardLogList(Model model, @RequestParam("bid") int bid) throws Exception {
 		model.addAttribute("boardLogList", boardService.getBoardLogList(bid));
+		//model.addAttribute("boardContent", boardService.getBoardContent(bbid));
 		return "board/boardLogIndex";
 	}
 	@RequestMapping(value = "/getBoardLogContent", method = RequestMethod.GET)
 	public String getBoardLogContent(Model model, @RequestParam("bbid") int bbid) throws Exception {
 		model.addAttribute("boardLogContent", boardService.getBoardLogContent(bbid));
+		//model.addAttribute("boardContent", boardService.getBoardContent(bid));
 		return "board/boardLogContent";
 	}
-//	@RequestMapping(value = "/getBoardContent", method = RequestMethod.GET)
-//	public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
-//		model.addAttribute("boardContent", boardService.getBoardContent(bid));
-//		return "board/boardContent";
-//	}
 	
 	@RequestMapping("/boardForm")
 	public String boardForm(@ModelAttribute("boardVO") BoardVO vo, Model model) {

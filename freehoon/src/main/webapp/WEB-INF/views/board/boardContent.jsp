@@ -48,7 +48,7 @@
 	var url = "${pageContext.request.contextPath}/board/getBoardLog";
 	url = url + "?bid=" + ${boardContent.bid};// ${boardLog.bbid}
 
-		location.href = url;
+	location.href = url;
 	});
 </script>
 
@@ -82,6 +82,7 @@ body {
 				</div>
 
 				<div class="board_content">${boardContent.content}</div>
+				<script>localStorage.setItem("cont", `${boardContent.content}`);</script>
 
 				<%-- <div class="board_tag">TAG : <c:out value="${boardContent.tag}"/></div> --%>
 

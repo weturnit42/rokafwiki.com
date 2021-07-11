@@ -40,6 +40,35 @@ function fn_contentView(bbid){
 	location.href = url;
 }
 
+function fn_contentRevert(bbid, bid){
+	alert(bbid + " " +  bid);
+}
+
+$(document).on('click', '#btnRevert', function(e) {
+	var myContent = localStorage.getItem("cont");
+	console.log(myContent);
+	e.preventDefault();
+    
+	   $("<input />").attr("type", "hidden")
+          .attr("name", "content")
+          .attr("value", myContent)
+          .appendTo("#form");
+	
+	//alert(editor.getData());
+	//$('#content').text(editor.getData());
+	console.log('test')		
+	$("#form").submit();
+});
+
+function fn_return(bid) {
+	var url = "${pageContext.request.contextPath}/board/getBoardContent";
+	url = url + "?bid=" + localStorage.getItem("bid");
+
+	location.href = url;
+}
+
+
+
 </script>
 
 <body>
@@ -64,9 +93,9 @@ function fn_contentView(bbid){
 
 								<col style="width: 15%;" />
 
-								<col style="width: 10%;" />
+								<col style="width: 15%;" />
 
-								<col style="width: 10%;" />
+								<col style="width: 20%;" />
 
 							</colgroup>
 
@@ -80,9 +109,9 @@ function fn_contentView(bbid){
 
 									<th>작성자</th>
 
-									<th>조회수</th>
-
 									<th>수정일</th>
+
+									<th>되돌리기</th>
 
 								</tr>
 
@@ -103,6 +132,7 @@ function fn_contentView(bbid){
 									<c:when test="${!empty boardLogList}">
 
 										<c:forEach var="list" items="${boardLogList}">
+											<script>localStorage.setItem("bid", <c:out value="${list.bid}"/>);</script>
 
 											<tr>
 
@@ -113,9 +143,12 @@ function fn_contentView(bbid){
 												</a></td>
 												<td><c:out value="${list.reg_id}" /></td>
 
-												<td><c:out value="${list.view_cnt}" /></td>
-
 												<td><c:out value="${list.edit_dt}" /></td>
+
+												<td>
+													<button type="button" class="btn btn-sm btn-primary"
+														id="btnRevert" onClick="fn_contentRevert(<c:out value="${list.bbid}"/>, <c:out value="${list.bid}"/>)">이 버전으로 되돌리기</button>
+												</td>
 											</tr>
 
 										</c:forEach>
@@ -130,6 +163,12 @@ function fn_contentView(bbid){
 					</div>
 				</div>
 			</div>
+			<div style="margin-top: 20px">
+
+				<button type="button" class="btn btn-sm btn-primary" id="btnDoc" onClick="fn_return(<c:out value="${list.bid}"/>)">돌아가기</button>
+
+			</div>
 		</div>
 	</article>
 </body>
+</html>
