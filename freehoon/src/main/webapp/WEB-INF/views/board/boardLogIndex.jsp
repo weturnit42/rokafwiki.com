@@ -35,9 +35,13 @@
 <script type="text/javascript">
 
 function fn_contentView(bbid){
-	var url = "${pageContext.request.contextPath}/board/getBoardLogContent";
+ 	var url = "${pageContext.request.contextPath}/board/getBoardLogContent";
 	url = url + "?bbid="+bbid;
 	location.href = url;
+	
+/* 	var url = "${pageContext.request.contextPath}/board/editLogForm?bid=";
+	url = url + localStorage.getItem("bid") + "&mode=edit";
+	location.href = url; */
 }
 
 function fn_contentRevert(bbid, bid){
@@ -93,8 +97,6 @@ function fn_return(bid) {
 
 								<col style="width: 15%;" />
 
-								<col style="width: 15%;" />
-
 								<col style="width: 20%;" />
 
 							</colgroup>
@@ -111,7 +113,6 @@ function fn_return(bid) {
 
 									<th>수정일</th>
 
-									<th>되돌리기</th>
 
 								</tr>
 
@@ -145,10 +146,6 @@ function fn_return(bid) {
 
 												<td><c:out value="${list.edit_dt}" /></td>
 
-												<td>
-													<button type="button" class="btn btn-sm btn-primary"
-														id="btnRevert" onClick="fn_contentRevert(<c:out value="${list.bbid}"/>, <c:out value="${list.bid}"/>)">이 버전으로 되돌리기</button>
-												</td>
 											</tr>
 
 										</c:forEach>

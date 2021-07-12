@@ -9,7 +9,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://cdn.tiny.cloud/1/gwke15lb3bzv3u8kq274dimwbpbjrlzqfz3jcoiyz3uldulr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script
+	src='https://cdn.tiny.cloud/1/gwke15lb3bzv3u8kq274dimwbpbjrlzqfz3jcoiyz3uldulr/tinymce/5/tinymce.min.js'
+	referrerpolicy="origin"></script>
+	
 <script>
   tinymce.init({
     selector: '#mytextarea'
@@ -26,6 +29,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
+	
+
 
 <title>ROKAF WIKI</title>
 
@@ -33,7 +38,7 @@
 
 <script>
 	$(document).on('click', '#btnSave', function(e) {
-		var myContent = tinymce.get("mytextarea").getContent();
+		var myContent = localStorage.getItem("log");
 		e.preventDefault();
         
 		   $("<input />").attr("type", "hidden")
@@ -49,7 +54,8 @@
 
 	$(document).on('click', '#btnList', function(e) {
 		e.preventDefault();
-		location.href = "${pageContext.request.contextPath}/board/getBoardList";
+		var url = "${pageContext.request.contextPath}/board/getBoardLog?bid="
+		location.href = url + ${boardContent.bid};
 	});
 	
 	$(document).ready(function(){
@@ -98,9 +104,8 @@
 					<label for="content">내용</label>
 					<%-- 					<form:textarea path="content" id="content" class="form-control"
 						rows="5" placeholder="내용을 입력해 주세요"/> --%>
-					<form method="post">
-						<textarea id="mytextarea" name="mytextarea">${boardContent.content}</textarea>
-					</form>
+					
+						<script>document.write(localStorage.getItem("log"));</script>
 
 				</div>
 
@@ -114,9 +119,9 @@
 
 			<div>
 
-				<button type="button" class="btn btn-sm btn-primary" id="btnSave">저장</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btnSave">이 버전으로 되돌리기</button>
 
-				<button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btnList">돌아가기</button>
 
 			</div>
 

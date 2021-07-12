@@ -187,6 +187,16 @@ public class BoardController {
 
 		return "board/boardForm";
 	}
+	
+	@RequestMapping(value = "/editLogForm", method = RequestMethod.GET)
+	public String editLogForm(@RequestParam("bid") int bid, @RequestParam("mode") String mode, Model model)
+			throws Exception {
+		model.addAttribute("boardContent", boardService.getBoardContent(bid));
+		model.addAttribute("mode", mode);
+		model.addAttribute("boardVO", new BoardVO());
+
+		return "board/boardLogForm";
+	}
 
 	@RequestMapping(value = "/deleteBoard", method = RequestMethod.GET)
 	public String deleteBoard(RedirectAttributes rttr, @RequestParam("bid") int bid) throws Exception {
